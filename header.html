@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KNOTICIAS.COM - Noticias y Eventos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #f4f4f4;
+        }
+        
+        /* Header con efecto sticky */
+        .site-header {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Pre-header con información útil */
+        .pre-header {
+            background: #1a1a1a;
+            color: #999;
+            padding: 8px 0;
+            font-size: 13px;
+            border-bottom: 2px solid #ff0000;
+        }
+        
+        .pre-header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        /* Header principal */
+        .main-header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Logo */
+        .logo a {
+            font-size: 36px;
+            font-weight: 800;
+            color: #ff0000;
+            text-decoration: none;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+        
+        .logo span {
+            font-size: 12px;
+            color: #666;
+            display: block;
+            letter-spacing: 2px;
+        }
+        
+        /* Navegación principal */
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+        
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #ff0000;
+            transition: width 0.3s;
+        }
+        
+        .main-nav a:hover::after,
+        .main-nav a.active::after {
+            width: 100%;
+        }
+        
+        .main-nav a.active {
+            color: #ff0000;
+        }
+        
+        /* Buscador */
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #f0f0f0;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+        
+        .search-box input {
+            border: none;
+            background: transparent;
+            padding: 10px 15px;
+            outline: none;
+            width: 200px;
+        }
+        
+        .search-box button {
+            background: #ff0000;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .search-box button:hover {
+            background: #cc0000;
+        }
+        
+        /* Banner AdSense */
+        .ad-banner {
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            border-left: 3px solid #ff0000;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .ad-banner:hover {
+            transform: scale(1.02);
+            background: #e9ecef;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-header {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .search-box input {
+                width: 150px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .pre-header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 5px;
+            }
+            
+            .main-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .main-nav ul {
+                gap: 20px;
+                justify-content: center;
+            }
+            
+            .search-box {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .search-box input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <!-- Pre-header con información -->
+        <div class="pre-header">
+            <div class="pre-header-content">
+                <span>📅 <span id="fechaActual"></span></span>
+                <span>🔥 Última hora: Noticias de última actualización</span>
+                <span>📱 Síguenos en redes</span>
+            </div>
+        </div>
+        
+        <!-- Header principal -->
+        <div class="main-header">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="/">KNOTICIAS.COM</a>
+                <span>DESDE 2026 INFORMANDO</span>
+            </div>
+            
+            <!-- Navegación - 3 secciones -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/" class="active">INICIO</a></li>
+                    <li><a href="/noticias">NOTICIAS</a></li>
+                    <li><a href="/eventos">EVENTOS</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Buscador -->
+            <div class="search-box">
+                <input type="text" placeholder="Buscar noticias...">
+                <button type="submit">Buscar</button>
+            </div>
+            
+            <!-- Espacio AdSense (reemplazar con tu código) -->
+            <div class="ad-banner" onclick="alert('Aquí irá tu código de AdSense')">
+                🎯 Publicidad
+            </div>
+        </div>
+    </header>
+    
+    <!-- Tu contenido actual -->
+    <main style="max-width: 1200px; margin: 30px auto; padding: 0 20px;">
+        <!-- Mantén aquí todo el contenido que ya tienes en knoticias.com -->
+        <h1>Bienvenido a KNOTICIAS.COM</h1>
+        <p>Tu sitio de confianza para noticias y eventos.</p>
+    </main>
+    
+    <script>
+        // Fecha actual
+        const fecha = new Date();
+        const opciones = { day: 'numeric', month: 'long', year: 'numeric' };
+        document.getElementById('fechaActual').textContent = 
+            fecha.toLocaleDateString('es-ES', opciones);
+    </script>
+</body>
+</html>

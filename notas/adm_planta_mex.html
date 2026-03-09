@@ -1,93 +1,414 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>ADM estrena planta de alimento húmedo en México</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
-        <link rel="stylesheet" href="../assets/css/notas.css" />
-	</head>
-	<body class="single is-preload">
+<head>
+    <title>KNoticias - [Nombre del Evento]</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/notas.css" />
+    <style>
+        /* Estilos específicos para eventos */
+        .ad-space {
+            background: #f8f9fa;
+            border: 2px dashed #ff0000;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 40px auto;
+            text-align: center;
+            max-width: 728px;
+        }
+        
+        .ad-space p {
+            color: #666;
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        .event-header {
+            background: linear-gradient(135deg, #ff0000, #990000);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 30px;
+        }
+        
+        .event-header h2 {
+            font-size: 48px;
+            margin: 20px 0;
+            color: white;
+        }
+        
+        .event-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        
+        .event-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .meta-item {
+            text-align: center;
+        }
+        
+        .meta-label {
+            color: #999;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        .meta-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .register-button {
+            background: #ff0000;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            margin: 20px 0;
+            transition: background 0.3s;
+        }
+        
+        .register-button:hover {
+            background: #cc0000;
+        }
+        
+        .event-details {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .event-section {
+            margin-bottom: 30px;
+        }
+        
+        .event-section h3 {
+            color: #ff0000;
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ff0000;
+            padding-bottom: 10px;
+        }
+        
+        .agenda-item {
+            display: flex;
+            gap: 20px;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .agenda-time {
+            font-weight: bold;
+            color: #ff0000;
+            min-width: 100px;
+        }
+        
+        .stats-box {
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff0000;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 13px;
+        }
+        
+        .event-map {
+            background: #ddd;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            margin: 30px 0;
+        }
+        
+        .related-events-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .event-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .event-date {
+            background: #ff0000;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .event-day {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .event-month {
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .event-header h2 {
+                font-size: 32px;
+            }
+            
+            .related-events-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .agenda-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body class="single is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="../index.html">KNoticias</a></h1>
-					</header>
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="../index.html">KNoticias</a></h1>
+            <div style="float: right; margin-right: 20px;">
+                <div class="ad-space" style="padding: 10px 20px; margin: 0;">
+                    <!-- AQUÍ VA TU CÓDIGO DE ADSENSE - BANNER 728x90 -->
+                    <p>📢 Publicidad</p>
+                </div>
+            </div>
+        </header>
 
-				<!-- Main -->
-					<div id="main">
+        <!-- Main -->
+        <div id="main">
 
-						<!-- Post -->
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2><a href="#">ADM estrena planta de alimento húmedo en México</a></h2>
-									</div>
-								</header>
-								<p>En los últimos años, la industria de alimentos para mascotas en México ha experimentado un crecimiento 
-                                    sin precedentes, y la reciente inauguración de la nueva planta de alimentos húmedos de Ganador y 
-                                    Minino en Yecapixtla, Morelos, es prueba de este auge. Con una inversión de 39 millones de dólares, 
-                                    esta moderna instalación de ADM® en México dedicada exclusivamente a la producción de alimentos 
-                                    húmedos para perros y gatos, reafirmando el compromiso de la marca con la calidad, la innovación 
-                                    y el bienestar animal.
-                                <img src="../images/adm1.jpg" alt="" class="img_notas"/>
-                                </p>                                    
-                                <p>Lo que distingue a esta nueva planta es su avanzada tecnología, que la convierte en una de las 
-                                    más modernas dentro de la red de ADM® en México. Equipadas con tres líneas de producción, 
-                                    estas instalaciones no solo optimizan los procesos de manufactura, sino que también 
-                                    garantizan que cada producto cumpla con los más altos estándares de calidad. Pero 
-                                    hay algo aún más importante: la planta también representa un gran avance hacia la 
-                                    sostenibilidad. Con un enfoque claro en la eficiencia energética, la utilización responsable 
-                                    del agua y procesos automatizados que facilitan un ambiente de trabajo ergonómico, esta planta 
-                                    se convierte en un ejemplo de cómo la innovación tecnológica y el respeto por el medio ambiente 
-                                    pueden ir de la mano.</p>
-                                <img src="../images/adm2.jpg" alt="" class="img_notas"/>
-                                <p><b>“Minino y Ganador son las marcas que más se venden en México menciono: KARIM CASTRO”</b>></b>
-                                </p>
-                                <p>La ceremonia de inauguración de esta planta fue presidida por Karim Castro, presidente de Nutrición 
-                                    Animal y de Mascotas para el Norte de Latinoamérica y el secretario de Agricultura y Desarrollo 
-                                    Rural, Julio Berdegué Sacristán.</p>
-                                <p><b>“Se estima que hay más de 80 millones de animales de compañía, con perros y gatos como los más 
-                                    populares menciono : comentó: Karim Castro”</b></p>
-                                <p>Desde su llegada a México en 2008, la compañía ha logrado convertirse en uno de los referentes 
-                                    principales en la industria de la nutrición para mascotas, gracias a sus queridas marcas 
-                                    Ganador®, Minino®, Top Choice® y FullTrust®.<br>
-                                    Este éxito no es casualidad; ha sido el resultado de inversiones estratégicas que han permitido 
-                                    su crecimiento continuo. Además de la apertura de esta nueva planta, en 2023 ADM® también 
-                                    inauguró una nueva línea de producción en Guadalajara, junto con un Macro Centro de Distribución 
-                                    en el Estado de México, ampliando aún más su capacidad para atender a las necesidades de las 
-                                    mascotas en todo el país.
-                                    </p>
-                                <p>Karim Castro mencionó que dejamos de importar de Francia el alimento humano para hacerlo en México 
-                                    precisamente en Morelos. Ya que ADM® ADM (Archer Daniels Midland Company) comenzó sus operaciones 
-                                    en 1902 en Estados Unidos. Fue fundada en Decatur, Illinois, y originalmente se enfocaba en el 
-                                    procesamiento de granos y la producción de aceites vegetales. Con el tiempo, ADM se expandió y 
-                                    diversificó, convirtiéndose en una de las mayores empresas globales en la industria de alimentos 
-                                    y productos agrícolas, incluyendo la nutrición animal, alimentos para mascotas y más.</p>
-                                <p><b>“Esta expansión nos permitirá atender las necesidades de nuestros socios estratégicos y 
-                                    consolidar nuestra posición dentro del TOP 2 de fabricantes de alimento para mascotas en el 
-                                    país comentó: Karim Castro”</b>></p>
-                                <img src="../images/adm3.jpg" alt="" class="img_notas"/>
-                                <p>ADM® en números : ADM®<br><br>
-                                    170 países está presente<br>
-                                    2do fabricante de alimento para mascotas <br>
-                                    2008 inició operaciones en México<br>
-                                    390 toneladas  de alimento donadas a lo largo de sus operaciones <br>
-                                    39 millones invertidos en la nueva planta de alimento húmedo en ADM YECAPIXTLA<br>
-                                    150 empleados en la planta ADM YECAPIXTLA
-                                    </p>
-							</article>
-					</div>
-			</div>
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+            <!-- Event Header -->
+            <div class="event-header">
+                <div class="event-icon">📅</div>
+                <h2>Conferencia de Tecnología 2026</h2>
+                <p>El evento más importante para profesionales tech</p>
+            </div>
+            
+            <!-- ANUNCIO DESPUÉS DEL HEADER -->
+            <div class="ad-space">
+                <!-- AQUÍ VA TU CÓDIGO DE ADSENSE - RECTÁNGULO 300x250 -->
+                <p>📢 Anuncio 300x250</p>
+            </div>
+            
+            <!-- Meta información del evento -->
+            <div class="event-meta">
+                <div class="meta-item">
+                    <div class="meta-label">📅 Fecha</div>
+                    <div class="meta-value">15 - 16 Marzo, 2026</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">⏰ Hora</div>
+                    <div class="meta-value">09:00 - 18:00</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">📍 Lugar</div>
+                    <div class="meta-value">Centro de Convenciones</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">🎟️ Cupos</div>
+                    <div class="meta-value">150 disponibles</div>
+                </div>
+            </div>
+            
+            <!-- Botón de registro -->
+            <div style="text-align: center;">
+                <a href="#" class="register-button" onclick="alert('Próximamente formulario de registro')">
+                    Registrarme al evento
+                </a>
+            </div>
+            
+            <!-- ANUNCIO DESPUÉS DEL BOTÓN -->
+            <div class="ad-space">
+                <!-- AQUÍ VA TU CÓDIGO DE ADSENSE - RECTÁNGULO 300x250 -->
+                <p>📢 Anuncio 300x250</p>
+            </div>
+            
+            <!-- Detalles del evento -->
+            <div class="event-details">
+                
+                <div class="event-section">
+                    <h3>Sobre el evento</h3>
+                    <p>KNoticias te invita a la Conferencia de Tecnología 2026, un espacio donde líderes de la industria compartirán las últimas tendencias en innovación, desarrollo y transformación digital. Más de 500 profesionales se reunirán para tres días de aprendizaje y networking.</p>
+                </div>
+                
+                <div class="event-section">
+                    <h3>Agenda destacada</h3>
+                    
+                    <div class="agenda-item">
+                        <div class="agenda-time">Día 1 - 15 Mar</div>
+                        <div>
+                            <strong>09:00 - Apertura:</strong> "El futuro de la IA"<br />
+                            <strong>11:00 - Taller:</strong> Desarrollo con nuevas tecnologías<br />
+                            <strong>14:00 - Panel:</strong> Ciberseguridad en 2026<br />
+                            <strong>16:30 - Networking</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="agenda-item">
+                        <div class="agenda-time">Día 2 - 16 Mar</div>
+                        <div>
+                            <strong>10:00 - Workshop:</strong> Cloud computing avanzado<br />
+                            <strong>13:00 - Almuerzo</strong> con expositores<br />
+                            <strong>15:00 - Casos de éxito:</strong> Transformación digital<br />
+                            <strong>18:00 - Cóctel</strong> de networking
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ANUNCIO ENTRE SECCIONES -->
+                <div class="ad-space">
+                    <!-- AQUÍ VA TU CÓDIGO DE ADSENSE - RECTÁNGULO 300x250 -->
+                    <p>📢 Anuncio 300x250</p>
+                </div>
+                
+                <div class="event-section">
+                    <h3>Conferencistas</h3>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Ana García</strong> - Directora de Tecnología en TechCorp</li>
+                        <li><strong>Carlos Rodríguez</strong> - Experto en IA, Google</li>
+                        <li><strong>María López</strong> - CEO de Innovatech</li>
+                        <li><strong>Juan Martínez</strong> - Especialista en ciberseguridad</li>
+                    </ul>
+                </div>
+                
+                <!-- Estadísticas -->
+                <div class="stats-box">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Asistentes</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Conferencistas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Talleres</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Empresas expositoras</div>
+                    </div>
+                </div>
+                
+                <!-- Mapa de ubicación -->
+                <div class="event-section">
+                    <h3>Ubicación</h3>
+                    <div class="event-map">
+                        🗺️ Mapa interactivo - Centro de Convenciones, Av. Principal 123
+                    </div>
+                </div>
+                
+                <!-- ANUNCIO AL FINAL -->
+                <div class="ad-space">
+                    <!-- AQUÍ VA TU CÓDIGO DE ADSENSE - BANNER 728x90 -->
+                    <p>📢 Publicidad - Banner 728x90</p>
+                </div>
+            </div>
+            
+            <!-- Eventos relacionados -->
+            <section style="margin-top: 50px;">
+                <h3 style="border-bottom: 2px solid #ff0000; padding-bottom: 10px;">📅 Próximos eventos</h3>
+                
+                <div class="related-events-grid">
+                    <div class="event-card">
+                        <div class="event-date">
+                            <div class="event-day">22</div>
+                            <div class="event-month">MAR</div>
+                        </div>
+                        <h4>Workshop de Desarrollo Web</h4>
+                        <p style="color: #666; font-size: 14px;">📍 Centro de Convenciones</p>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">
+                            <div class="event-day">30</div>
+                            <div class="event-month">MAR</div>
+                        </div>
+                        <h4>Feria de Empleo Tech</h4>
+                        <p style="color: #666; font-size: 14px;">📍 Espacio Darwin</p>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">
+                            <div class="event-day">05</div>
+                            <div class="event-month">ABR</div>
+                        </div>
+                        <h4>Conferencia de Marketing Digital</h4>
+                        <p style="color: #666; font-size: 14px;">📍 Auditorio Principal</p>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+        
+        <!-- Footer -->
+        <footer id="footer" style="text-align: center; padding: 30px; border-top: 1px solid #eee;">
+            <p>© 2026 KNoticias - Todos los derechos reservados</p>
+        </footer>
+        
+    </div>
 
-	</body>
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
 </html>
