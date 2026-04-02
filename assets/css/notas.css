@@ -1,9 +1,243 @@
-.img_notas {
-    width: 60%;
-    height: auto;
-    margin: 0 0 0 20%;
+/* Pastel Color Palette Variables */
+:root {
+    --bg-color: #FDF6F6;
+    --card-bg: #FFFFFF;
+    --pastel-pink: #FFE4E1;
+    --pastel-lavender: #E6E6FA;
+    --pastel-mint: #F0FFF0;
+    --pastel-blue: #E0F7FA;
+    --text-dark: #4A4A4A;
+    --text-soft: #7A7A7A;
+    --accent-coral: #F08080;
+    --accent-sky: #87CEEB;
 }
 
-.letritas {
-    font-size: small;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--accent-coral);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: var(--text-soft);
+    font-size: 1.2rem;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* --- INPUT FORM STYLES --- */
+.input-section {
+    flex: 1;
+    min-width: 300px;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(240, 128, 128, 0.15);
+    border: 2px solid var(--pastel-pink);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--pastel-lavender);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    background: var(--pastel-mint);
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-coral);
+    background: #fff;
+}
+
+/* --- PREVIEW TEMPLATE STYLES --- */
+.preview-section {
+    flex: 1;
+    min-width: 350px;
+    max-width: 500px;
+}
+
+.kpop-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(230, 230, 250, 0.5);
+    transition: 0.3s;
+}
+
+/* Header Block */
+.card-header {
+    background: var(--pastel-pink);
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.agency-text {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-coral);
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.group-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+    line-height: 1.1;
+}
+
+/* Body Block */
+.card-body {
+    padding: 25px;
+    background: linear-gradient(to bottom, #ffffff, var(--pastel-lavender));
+}
+
+.tagline-box {
+    display: inline-block;
+    background: var(--pastel-blue);
+    padding: 8px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #5f9ea0;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+/* Achievements */
+.achievement-box {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--accent-sky);
+}
+
+.achievement-title {
+    font-weight: 700;
+    color: var(--accent-coral);
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.achievement-text {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+/* Tour Info */
+.tour-info {
+    background: var(--pastel-mint);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 2px dashed var(--accent-coral);
+}
+
+.tour-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-soft);
+    margin-bottom: 5px;
+}
+
+.tour-date {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.tour-venue {
+    font-size: 1.1rem;
+    color: var(--accent-coral);
+    font-weight: 600;
+}
+
+/* Footer */
+.card-footer {
+    text-align: center;
+    padding: 15px;
+    background: var(--pastel-pink);
+}
+
+.social-link {
+    color: var(--accent-coral);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    background: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.social-link:hover {
+    background: var(--accent-coral);
+    color: white;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .group-name {
+        font-size: 2rem;
+    }
 }

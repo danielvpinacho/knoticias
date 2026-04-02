@@ -1,0 +1,42 @@
+K-Pop Announcement Template
+
+✨ K-Pop Template Creator ✨
+
+📝 Fill Details
+
+Agency / Label
+
+Group Name
+
+Tagline (Concept/Style)
+
+Description (History)
+
+Latest Hit Song
+
+Streams / Achievements
+
+Tour Date
+
+Tour Venue
+
+Social Media Handle
+
+AGENCY PRESENTS
+GROUP NAME
+
+Tagline goes here
+
+Description will appear here...
+
+🔥 Latest Hit
+Song Name
+
+🏆 Stats
+Achievements
+
+⚠️ UPCOMING DATE
+DATE
+VENUE
+
+@handle

@@ -1,0 +1,8 @@
+{
+  "id": 1775143448865,
+  "sourceFile": "base_template.txt",
+  "title": "base_template",
+  "createdAt": "2026-04-02T15:24:08.082Z",
+  "content": "K-Pop Announcement Template\n\n✨ K-Pop Template Creator ✨\n\n📝 Fill Details\n\nAgency / Label\n\nGroup Name\n\nTagline (Concept/Style)\n\nDescription (History)\n\nLatest Hit Song\n\nStreams / Achievements\n\nTour Date\n\nTour Venue\n\nSocial Media Handle\n\nAGENCY PRESENTS\nGROUP NAME\n\nTagline goes here\n\nDescription will appear here...\n\n🔥 Latest Hit\nSong Name\n\n🏆 Stats\nAchievements\n\n⚠️ UPCOMING DATE\nDATE\nVENUE\n\n@handle\n",
+  "redacted": "K-Pop Announcement Template\n\n✨ K-Pop Template Creator ✨\n\n📝 Fill Details\n\nAgency / Label\n\nGroup Name\n\nTagline (Concept/Style)\n\nDescription (History)\n\nLatest Hit Song\n\nStreams / Achievements\n\nTour Date\n\nTour Venue\n\nSocial Media Handle\n\nAGENCY PRESENTS\nGROUP NAME\n\nTagline goes here\n\nDescription will appear here...\n\n🔥 Latest Hit\nSong Name\n\n🏆 Stats\nAchievements\n\n⚠️ UPCOMING DATE\nDATE\nVENUE\n\n<<REDACTED-TAG>>@handle<<REDACTED-TAG>>\n"
+}
